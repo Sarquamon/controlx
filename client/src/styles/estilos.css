@@ -1,0 +1,119 @@
+.contenedor {
+  padding: 60px 0;
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.titulo {
+  color: hotpink;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+header {
+  height: 600px;
+}
+
+nav {
+  text-align: right;
+  padding: 30px 50px 0 0;
+}
+
+nav > a {
+  color: #fff;
+  font-weight: 300;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+nav > a:hover {
+  text-decoration: underline;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+header .textos-header {
+  display: flex;
+  height: 430px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.textos-header h1 {
+  font-size: 50px;
+  color: #fff;
+}
+
+.textos-header h2 {
+  font-size: 30px;
+  font-weight: 300;
+  color: #fff;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.Menú {
+  background: #f2f2f2;
+}
+
+.opciones-port {
+  display: flex;
+  justify-content: space-evently;
+  flex-wrap: wrap;
+}
+
+.imagen-port {
+  width: 95%;
+  margin-bottom: 400px;
+  height: 115px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+}
+
+.imagen-port > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hover-galeria {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  transform: scale(0);
+  background: hsla(330, 76%, 53%, 0.63);
+  transition: transform 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hover-galeria img {
+  width: 50px;
+}
+
+.hover-galeria p {
+  color: #fff;
+}
+
+.imagen-port:hover .hover-galeria {
+  transform: scale(1);
+}
