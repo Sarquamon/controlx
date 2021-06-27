@@ -26,7 +26,7 @@ const getAllCitas = async (req, res) => {
     if (result) {
       res.status(200).json(result);
     } else {
-      res.status(404).json({ message: "No se encontraron citas" });
+      res.status(200).json({ message: "No se encontraron citas" });
     }
   } catch (e) {
     console.log("Error en encontrar citas");
@@ -51,8 +51,15 @@ const deleteCita = async (req, res) => {
 };
 
 const updateCita = async (req, res) => {
-  const { nombre, telefono, servicio, precio, fechacita, horacita, citaID } =
-    req.body;
+  const {
+    citaID,
+    nombre,
+    precio,
+    telefono,
+    servicio,
+    horadeCita,
+    fechadeCita,
+  } = req.body;
 
   try {
     const cita = await findOneCitas(citaID);
@@ -68,8 +75,8 @@ const updateCita = async (req, res) => {
             TELEFONO: telefono,
             SERVICIO: servicio,
             PRECIO: precio,
-            FECHACITA: fechacita,
-            HORACITA: horacita,
+            FECHACITA: fechadeCita,
+            HORACITA: horadeCita,
           },
           {
             where: {
