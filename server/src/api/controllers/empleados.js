@@ -97,8 +97,6 @@ const updateEmpleado = async (req, res) => {
   const { nuevoDireccionEmpleado, nuevoTelefonoEmpleado, empleadoID, curp } =
     req.body;
 
-  console.log(req.body);
-
   try {
     const empleado = await findOneEmpleado(curp);
     if (!empleado) {

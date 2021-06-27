@@ -26,7 +26,7 @@ const getAllProductos = async (req, res) => {
     if (result) {
       res.status(200).json(result);
     } else {
-      res.status(404).json({ message: "No se encontraron productos" });
+      res.status(200).json({ message: "No se encontraron productos" });
     }
   } catch (e) {
     console.log("Error en encontrar productos");
@@ -64,9 +64,8 @@ const deleteProducto = async (req, res) => {
 
 const updateProducto = async (req, res) => {
   const { nombre, marca, precio, productoID } = req.body;
-
   try {
-    const producto = await findOneProducto(curp);
+    const producto = await findOneProducto(productoID);
     if (!producto) {
       res.status(409).json({
         message: "El producto no existe",

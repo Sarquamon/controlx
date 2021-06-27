@@ -27,7 +27,7 @@ const getAllTratamientos = async (req, res) => {
     if (result) {
       res.status(200).json(result);
     } else {
-      res.status(404).json({ message: "No se encontraron tratamientos" });
+      res.status(200).json({ message: "No se encontraron tratamientos" });
     }
   } catch (e) {
     console.log("Error en encontrar tratamientos");
@@ -36,7 +36,7 @@ const getAllTratamientos = async (req, res) => {
 };
 
 const deleteTratamiento = async (req, res) => {
-  const { tratamientoID } = req.body;
+  const { tratamientoID } = req.query;
 
   try {
     await Tratamientos.destroy({
@@ -53,7 +53,7 @@ const deleteTratamiento = async (req, res) => {
 
 const updateTratamiento = async (req, res) => {
   const { descripcion, producto, precio, tratamientoID } = req.body;
-
+  console.log(descripcion);
   try {
     const tratamiento = await findOneTratamiento(tratamientoID);
     if (!tratamiento) {
@@ -66,7 +66,7 @@ const updateTratamiento = async (req, res) => {
           { DESCRIPCION: descripcion, PRODUCTO: producto, PRECIO: precio },
           {
             where: {
-              ID_PRODUCTO: tratamientoID,
+              ID_TRATAMIENTO: tratamientoID,
             },
           }
         );

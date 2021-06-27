@@ -38,7 +38,7 @@ const getAllClientes = async (req, res) => {
     if (result) {
       res.status(200).json(result);
     } else {
-      res.status(404).json({ message: "No se encontraron clientes" });
+      res.status(200).json({ message: "No se encontraron clientes" });
     }
   } catch (e) {
     console.log("Error en encontrar clientes");
@@ -48,7 +48,6 @@ const getAllClientes = async (req, res) => {
 
 const deleteCliente = async (req, res) => {
   const { clienteID, curp } = req.query;
-
   try {
     const cliente = await findOneCliente(curp);
     if (!cliente) {
@@ -77,7 +76,7 @@ const deleteCliente = async (req, res) => {
 const updateCliente = async (req, res) => {
   const { nuevoNombreCliente, nuevoTelefonoCliente, clienteID, curp } =
     req.body;
-
+  console.log(nuevoNombreCliente, nuevoTelefonoCliente, clienteID, curp);
   try {
     const cliente = await findOneCliente(curp);
     if (!cliente) {
