@@ -32,10 +32,12 @@ const {
   updateTratamiento,
 } = require("../controllers/tratamientos");
 
+const { generateTicket } = require("../controllers/tickets");
+
 const router = express.Router();
 
 router.post("/login");
-router.post("/gerenateTicket");
+router.post("/gerenateTicket", generateTicket);
 router.post("/registerDate", registerCita);
 router.post("/registerEmpleado", registerEmpleado);
 router.post("/registerCliente", registerCliente);

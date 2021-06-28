@@ -18,6 +18,7 @@ export const Tickets = () => {
           values
         );
         if (result.status === 200) {
+          alert("El ticket se generó en el servidor");
           history.push("/");
         }
       } catch (e) {

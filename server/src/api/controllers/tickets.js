@@ -7,8 +7,6 @@ const generateTicket = async (req, res) => {
   const doc = new jsPDF();
   try {
     const resultadoTratamiento = findOneTratamiento(tratamientoID);
-    console.log(resultadoTratamiento);
-
     doc.text("Control X", 10, 10);
     doc.text(`Hora ${precioTotal}`, 10, 20);
     doc.text(`Fecha total ${precioTotal}`, 10, 30);
@@ -18,13 +16,16 @@ const generateTicket = async (req, res) => {
     doc.text(`Precio final:  ${precioTotal}`, 10, 70);
     const result = await doc.save("../../a4.pdf", { returnPromise: true }); // will save the file in the current working directory
     if (result) {
+      res.status(200).json({ message: "Ticket creado" });
     } else {
-      // res.status(500).json({ message: "Fallo al crear el PDF" });
+      res.status(500).json({ message: "Fallo al crear el PDF" });
     }
   } catch (e) {
     console.log("Error al crear el PDF");
-    // res.status(500).json({ message: "Fallo al crear el PDF" });
+    res.status(500).json({ message: "Fallo al crear el PDF" });
   }
 };
 
-generateTicket();
+module.exports = {
+  generateTicket,
+};
