@@ -2,6 +2,8 @@ import React from "react";
 
 import "../styles/estilos.css";
 
+import { Link } from "react-router-dom";
+
 import ticket from "../assets/img/TICKET.jpg";
 import usuario from "../assets/img/USUARIO.jpg";
 import cita from "../assets/img/CITA.jpg";
@@ -19,53 +21,53 @@ export const Index = () => {
       </div>
       <section className="contenedor">
         <div className="opciones-port">
-          <a href="Ticket.html">
+          <Link to="/tickets">
             <div className="imagen-port">
               <img src={ticket} alt="" />
             </div>
-          </a>
+          </Link>
         </div>
         <div className="opciones-port">
-          <a href="BCita.html">
+          <Link to="/citas">
             <div className="imagen-port">
               <img src={cita} alt="" />
             </div>
-          </a>
+          </Link>
         </div>
         <div className="opciones-port">
-          <a href="BUsuario.html">
+          <Link to="/empleados">
             <div className="imagen-port">
               <img src={usuario} alt="" />
             </div>
-          </a>
+          </Link>
         </div>
         <div className="opciones-port">
-          <a href="Productos.html">
+          <Link to="/productos">
             <div className="imagen-port">
               <img src={productos} alt="" />
             </div>
-          </a>
+          </Link>
         </div>
         <div className="opciones-port">
-          <a href="BClientes.html">
+          <Link to="/clientes">
             <div className="imagen-port">
               <img src={clientes} alt="" />
             </div>
-          </a>
+          </Link>
         </div>
         <div className="opciones-port">
-          <a href="BEmpleado.html">
+          <Link to="/empleados">
             <div className="imagen-port">
               <img src={empleado} alt="" />
             </div>
-          </a>
+          </Link>
         </div>
         <div className="opciones-port">
-          <a href="BTratamiento.html">
+          <Link to="/tratamientos">
             <div className="imagen-port">
               <img src={tratamiento} alt="" />
             </div>
-          </a>
+          </Link>
         </div>
       </section>
     </main>
