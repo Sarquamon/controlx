@@ -1,7 +1,7 @@
 const { Op } = require("sequelize");
 const Tratamientos = require("../../models/Tratamientos");
 
-const findOneTratamiento = (tratamientoID = null) => {
+const findOneTratamiento = (tratamientoID) => {
   return new Promise(async (resolve, reject) => {
     try {
       const result = await Tratamientos.findOne({

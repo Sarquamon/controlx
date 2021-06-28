@@ -8,7 +8,7 @@ export const Tickets = () => {
   const history = useHistory();
   const formik = useFormik({
     initialValues: {
-      citaID: "",
+      tratamientoID: "",
     },
 
     onSubmit: async (values) => {
@@ -45,19 +45,19 @@ export const Tickets = () => {
     >
       <form onSubmit={formik.handleSubmit}>
         <div className="mb-3">
-          <label htmlFor="citaID" className="form-label">
-            Ingrese la referencia de la cita:
+          <label htmlFor="tratamientoID" className="form-label">
+            Ingrese la referencia del tratamiento:
           </label>
           <input
             type="text"
-            id="citaID"
+            id="tratamientoID"
             className="form-control"
-            placeholder="Referencia de la cita"
-            aria-label="citaID"
-            name="citaID"
+            placeholder="Referencia del tratamiento"
+            aria-label="tratamientoID"
+            name="tratamientoID"
             aria-describedby="basic-addon1"
             onChange={formik.handleChange}
-            value={formik.values.citaID}
+            value={formik.values.tratamientoID}
           />
         </div>
         <button type="submit" className="btn btn-primary">
