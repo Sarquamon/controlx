@@ -49,6 +49,7 @@ export const Clientes = () => {
                   <th scope="col">ID</th>
                   <th scope="col">Nombre (s)</th>
                   <th scope="col">Telefono</th>
+                  <th scope="col">CURP</th>
                   <th scope="col">Opciones</th>
                 </tr>
               </thead>
@@ -59,6 +60,7 @@ export const Clientes = () => {
                     <th scope="row">{client.ID_CLIENTE}</th>
                     <td>{client.FIRST_NAME}</td>
                     <td>{client.PHONE}</td>
+                    <td>{client.CURP}</td>
                     <td>
                       <div
                         className="btn-group"
